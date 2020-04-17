@@ -7,18 +7,20 @@ $(document).ready(function () {
 
 
   newInput.keyup(function(event){
+    var text = newInput.val().trim();
+
     //console.log(event.which);
     if(event.which !== 32){
-      toggleMic();
-    }
+      if(text !== ""){
+        toggleMic();
+        console.log("ok2");
+      }
+    } 
     
     if(event.which == 13) {
-      var text = newInput.val().trim();
-      console.log("ok");
-      
-      if(text !== "") {
-        console.log("ok");
+      if(text !== "") { 
         sendMsg(text);
+        console.log(text);
         toggleMicReverse();
         newInput.val("");
       }
@@ -27,10 +29,12 @@ $(document).ready(function () {
   });
   
   function sendMsg(word) { 
+ 
     var elementNew = $(".template li").clone();
     elementNew.prepend('<p> ' + word + " <span class='data_time'>15.30</span>" + '</p>');
     elementNew.appendTo(list);
     list.scrollTop(list.innerHeight());
+    //console.log(elementNew.text());
   }
 
   function toggleMic() {
