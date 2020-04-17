@@ -74,7 +74,7 @@ body{
 /* Sidebar --> Guest */
 #guest{
   width: 100%;
-  line-height: 40px;
+  line-height: 35px;
   background-color: #EAEAEA;
   padding: 10px 15px;
   justify-content: space-between;
@@ -82,7 +82,7 @@ body{
 
 
 #guest img{
-  width: 40px;
+  width: 35px;
   border-radius: 50%;
   cursor: pointer;
   -webkit-box-shadow: 0px 0px 3px 0px rgba(110,110,110,1);
@@ -108,11 +108,11 @@ body{
 }
 
 #notify div:first-child{
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   background: white;
   border-radius: 50%;
-  margin: 15px 10px 15px 0;
+  margin: 10px 10px 10px 0;
   cursor: pointer;
 }
 
@@ -127,6 +127,7 @@ body{
 #notify span{
   font-size: 12px;
   font-weight: bold;
+  margin-bottom: 2px;
 }
 
 #notify a{
@@ -186,6 +187,7 @@ body{
   background: #FFFFFF;
   border-bottom: 1px solid #F5F5F5;
   padding: 0 20px;
+  cursor: pointer;
   transition: background 0.3s;
 }
 
