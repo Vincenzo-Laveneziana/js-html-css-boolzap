@@ -78,6 +78,13 @@ body{
   background: white;
 }
 
+.template{
+  display: none;
+}
+
+.chat_send .send{
+  display: none;
+}
 
 /* Sidebar */
 #sidebar{
