@@ -1,1 +1,4 @@
-console.log("OK andiamo");
+$(document).ready(function () {
+  console.log("andiamo");
+  
+});
