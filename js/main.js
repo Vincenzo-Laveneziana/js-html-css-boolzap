@@ -48,18 +48,18 @@ $(document).ready(function () {
     var elementNew = $(".template .posted").clone();
     elementNew.prepend("<p>" + word + "<span class='data_time'>"+ addData() +"</span>" + "</p>");
     elementNew.appendTo(list);
-    list.scrollTop(list.innerHeight());
+    $("#body_chat").scrollTop($("#body_chat").innerHeight()); 
     //console.log(elementNew.text());
   }
 
   function toggleMic() {
-    $('.rec').hide();
-    $('.send').show();
+    $(".rec").hide();
+    $(".send").show();
   }
 
   function toggleMicReverse() {
-    $('.rec').show();
-    $('.send').hide();
+    $(".rec").show();
+    $(".send").hide();
   }
 
   function addData(){
