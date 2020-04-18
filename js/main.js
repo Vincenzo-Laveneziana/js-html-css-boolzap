@@ -48,7 +48,7 @@ $(document).ready(function () {
     var elementNew = $(".template .posted").clone();
     elementNew.prepend("<p>" + word + "<span class='data_time'>"+ addData() +"</span>" + "</p>");
     elementNew.appendTo(list);
-    $("#body_chat").scrollTop($("#body_chat").innerHeight()); 
+    $("#body_chat").scrollTop($("#body_chat").prop("scrollHeight")); 
     //console.log(elementNew.text());
   }
 
