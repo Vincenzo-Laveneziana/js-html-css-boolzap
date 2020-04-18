@@ -370,6 +370,10 @@ body{
   border: 2px solid #6B9AF1;
 }
 
+#sending_chat .chat_send{
+  width: 15px;
+}
+
 #sending_chat i{
   color: #6C7376;
 }
