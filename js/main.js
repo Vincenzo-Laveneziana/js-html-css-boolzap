@@ -5,7 +5,7 @@ $(document).ready(function () {
   var newInput = $(".add_element");
   var icon = $(".chat_send i");
   var text = newInput.val().trim();
-  
+  var arrow = $("fas fa-chevron-down")
 
 
   //al click
@@ -18,6 +18,11 @@ $(document).ready(function () {
 
 
   //alla pressione tasto invio
+  /* 
+  L'ho voluto implementare in maniera che,
+  lo switch delle icone avviene solo quando c'è del testo al suo
+  interno, altrimenti se io mi posiziono sopra e non metto niente dentro l'icona invio non appare.
+  */
   newInput.keyup(function(event){
     text = newInput.val().trim();
 
@@ -25,8 +30,10 @@ $(document).ready(function () {
     if(event.which !== 32){
       if(text !== ""){
         toggleMic();
+      } else if(event.which !== 32 || text !== "" ){
+        toggleMicReverse()
       }
-    } 
+    }
     
     if(event.which == 13) {
       if(text !== "") { 
@@ -54,11 +61,11 @@ $(document).ready(function () {
 
   function toggleMic() {
     $(".rec").hide();
-    $(".send").show();
+    $(".send").fadeIn("100");
   }
 
   function toggleMicReverse() {
-    $(".rec").show();
+    $(".rec").fadeIn("100");
     $(".send").hide();
   }
 
