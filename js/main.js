@@ -5,14 +5,14 @@ $(document).ready(function () {
   var newInput = $(".add_element");
   var icon = $(".chat_send i");
   var text = newInput.val().trim();
-  var arrow = $("fas fa-chevron-down")
+  var arrow = $("fas fa-chevron-down");
 
 
   //al click
   icon.click(function(){
     text = newInput.val().trim();
-    if(text !== "") { 
-      writeMsg(text)
+    if(text !== ""){ 
+      writeMsg(text);
     }
   })
 
@@ -26,22 +26,22 @@ $(document).ready(function () {
   newInput.keyup(function(event){
     text = newInput.val().trim();
 
-    //console.log(event.which);
+   // console.log(event.which);
     if(event.which !== 32){
       if(text !== ""){
         toggleMic();
       } else if(event.which !== 32 || text !== "" ){
-        toggleMicReverse()
+        toggleMicReverse();
       }
     }
     
-    if(event.which == 13) {
-      if(text !== "") { 
-        writeMsg(text)
+    if(event.which == 13){
+      if(text !== ""){ 
+        console.log("log3");
+        writeMsg(text);
       }
     }
   });//fine key up
-
   
 
   function writeMsg(word){
@@ -51,7 +51,7 @@ $(document).ready(function () {
     newInput.val("");
   }
   
-  function sendMsg(word) { 
+  function sendMsg(word){ 
     var elementNew = $(".template .posted").clone();
     elementNew.prepend("<p>" + word + "<span class='data_time'>"+ addData() +"</span>" + "</p>");
     elementNew.appendTo(list);
@@ -59,13 +59,13 @@ $(document).ready(function () {
     //console.log(elementNew.text());
   }
 
-  function toggleMic() {
+  function toggleMic(){
     $(".rec").hide();
-    $(".send").fadeIn("100");
+    $(".send").show();
   }
 
-  function toggleMicReverse() {
-    $(".rec").fadeIn("100");
+  function toggleMicReverse(){
+    $(".rec").show();
     $(".send").hide();
   }
 
