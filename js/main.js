@@ -52,9 +52,10 @@ $(document).ready(function () {
   }
   
   function sendMsg(word){ 
-    var elementNew = $(".template .posted").clone();
-    elementNew.prepend("<p>" + word + "<span class='data_time'>"+ addData() +"</span>" + "</p>");
+    var elementNew = $(".template .posted ").clone();
+    elementNew.prepend("<p>" + word + "<span>"+ addData() +"</span>" + "</p>"); 
     elementNew.appendTo(list);
+    $(".posted span").addClass("data_time");
     $("#body_chat").scrollTop($("#body_chat").prop("scrollHeight")); 
     //console.log(elementNew.text());
   }
@@ -70,9 +71,7 @@ $(document).ready(function () {
   }
 
   function addData(){
-    var myDate = new Date();
-    var hour = myDate.getHours();
-    var minutes = myDate.getMinutes();
-    return hour = hour + ":" + minutes;
+    var dateNow = new Date();
+    return hourNow = (dateNow.getHours()<10?'0':'') + dateNow.getHours() + ':' + (dateNow.getMinutes()<10?'0':'') + dateNow.getMinutes();
   }
 });
