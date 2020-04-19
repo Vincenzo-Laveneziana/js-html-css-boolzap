@@ -72,6 +72,10 @@ $(document).ready(function () {
 
   function addData(){
     var dateNow = new Date();
-    return hourNow = (dateNow.getHours()<10?'0':'') + dateNow.getHours() + ':' + (dateNow.getMinutes()<10?'0':'') + dateNow.getMinutes();
+    return hourNow = (dateNow.getHours()<10?'0':'') 
+                      + dateNow.getHours() 
+                      + ':' + 
+                     (dateNow.getMinutes()<10? '0':'') 
+                      + dateNow.getMinutes();
   }
 });
