@@ -5,7 +5,6 @@ $(document).ready(function () {
   var newInput = $(".add_element");
   var icon = $(".chat_send i");
   var text = newInput.val().trim();
-  var user = $(".user_name")
 
 
   //ricerca dei contatti
@@ -97,13 +96,13 @@ $(document).ready(function () {
   }
 
   function toggleMic(){
-    $(".rec").hide();
-    $(".send").show();
+   
+    icon.removeClass("fa-microphone").addClass("fa-paper-plane");
+
   }
 
   function toggleMicReverse(){
-    $(".rec").show();
-    $(".send").hide();
+    icon.removeClass("fa-paper-plane").addClass("fa-microphone");
   }
 
   function addData(){
