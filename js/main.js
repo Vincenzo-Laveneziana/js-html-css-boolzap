@@ -87,8 +87,20 @@ $(document).ready(function () {
   }
 
   function rispostaContatto(){
+    var risposte = ["Si si hai ragione!!!", 
+                    "Stiamo lavorando attivamente per lei",
+                    "No problem!!",
+                    "L'analcolico biondo che fa impazzire il mondo",
+                    "Voto diescccciiii",
+                    "Li vuoi quei kiwi?"
+    ];
+    //console.log(risposte);
+    
+    var random = Math.floor(Math.random()* risposte.length);
+    //console.log(random);
+    
     var elementNew = $(".template .message ").clone();
-    elementNew.children(".message-text").text("Si Si hai ragione!!!");
+    elementNew.children(".message-text").text(risposte[random]);
     elementNew.children(".data_time").text(addData());
     elementNew.addClass("received");
     elementNew.appendTo(list);
