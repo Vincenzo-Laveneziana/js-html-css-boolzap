@@ -53,8 +53,9 @@ $(document).ready(function () {
   
   function sendMsg(word){ 
     var elementNew = $(".template .posted ").clone();
-    elementNew.prepend("<p>" + word + "<span>"+ addData() +"</span>" + "</p>"); 
+    elementNew.children("p").html(word  + "<span>"+ addData() +"</span>");
     elementNew.appendTo(list);
+
     $(".posted span").addClass("data_time");
     $("#body_chat").scrollTop($("#body_chat").prop("scrollHeight")); 
     //console.log(elementNew.text());

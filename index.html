@@ -26,6 +26,7 @@
     <!-- Parte sinistra dedicata agli utenti della chat -->
     <aside id="sidebar" class="flex">
 
+      <!-- dedicato al profilo personale -->
       <section id="guest" class="flex align-center">
        
         <img src="img/guest.jpg" alt="">
@@ -38,6 +39,7 @@
         
       </section>
 
+      <!-- dedicato all'icona notifica blu -->
       <section id="notify" class="flex align-center">
 
         <div class="flex flex-center-center">
@@ -51,100 +53,109 @@
 
       </section>
 
+      <!-- dedicato al pulsante cerca -->
       <section id="search">
 
-        <div class="search_bar">
-          <form class="example flex align-center" action="#">
-            <button type="submit">
+        <div class="search_bar flex align-center">
+            <label type="submit" for="search-input">
               <i class="fa fa-search"></i>
-            </button>
-            <input type="text" placeholder="Cerca o inizia una nuova chat" name="search">         
-          </form>
+            </label>
+            <input type="text" id="search-input" placeholder="Cerca o inizia una nuova chat" name="search-input">         
         </div>
         
       </section>
 
+      <!-- dedicato ai contatti -->
       <section id="user" class="">
 
-        <div class="user_name flex align-center">
+        <div class="user_name active" data-conversazione="0">
           <img src="img/avatar_9.jpg" alt="img guest">
 
           <div class="user_name_text">
             <h5>Giuseppe Conte</h5>
             <span>Che dici lo faccio il nuovo DPCM?</span>
           </div>
+          <span class="data_time">18:30</span>
         </div>
         
-        <div class="user_name flex align-center">
+        <div class="user_name">
           <img src="img/avatar_1.jpg" alt="img guest">
 
           <div class="user_name_text">
             <h5>Michele</h5>
             <span>Prova ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc</span>
           </div>
+          <span class="data_time">18:30</span>
         </div>
 
-        <div class="user_name flex align-center">
+        <div class="user_name">
           <img src="img/avatar_2.jpg" alt="img guest">
 
           <div class="user_name_text">
             <h5>Fabio</h5>
             <span>Prova</span>
           </div>
+          <span class="data_time">18:30</span>
         </div>
 
-        <div class="user_name flex align-center">
+        <div class="user_name">
           <img src="img/avatar_3.jpg" alt="img guest">
 
           <div class="user_name_text">
             <h5>Samuele</h5>
             <span>Prova</span>
           </div>
+          <span class="data_time">18:30</span>
         </div>
 
-        <div class="user_name flex align-center">
+        <div class="user_name">
           <img src="img/avatar_4.jpg" alt="img guest">
 
           <div class="user_name_text">
             <h5>Alessandro B.</h5>
             <span>Prova</span>
           </div>
+          <span class="data_time">18:30</span>
         </div>
 
-        <div class="user_name flex align-center">
+        <div class="user_name">
           <img src="img/avatar_5.jpg" alt="img guest">
 
           <div class="user_name_text">
             <h5>Alessandro L.</h5>
             <span>Prova</span>
           </div>
+          <span class="data_time">18:30</span>
         </div>
 
-        <div class="user_name flex align-center">
+        <div class="user_name">
           <img src="img/avatar_6.jpg" alt="img guest">
 
           <div class="user_name_text">
             <h5>Claudia</h5>
             <span>Prova</span>
           </div>
+          <span class="data_time">18:30</span>
         </div>
 
-        <div class="user_name flex align-center">
+        <div class="user_name">
           <img src="img/avatar_7.jpg" alt="img guest">
 
           <div class="user_name_text">
             <h5>Davide</h5>
             <span>Prova</span>
           </div>
+          <span class="data_time">18:30</span>
         </div>
 
-        <div class="user_name flex align-center">
+        <div class="user_name">
           <img src="img/avatar_8.jpg" alt="img guest">
 
           <div class="user_name_text">
             <h5>Federico</h5>
             <span>Prova</span>
           </div>
+          <span class="data_time">18:30</span>
         </div>
 
       </section>
@@ -226,7 +237,9 @@
     </aside>
 
     <div class="template">
-      <li class="posted"> </li>
+      <li class="posted">
+         <p> <span class="data_time">18:30</span> </p>
+      </li>
     </div>
 
     <div class="template">
