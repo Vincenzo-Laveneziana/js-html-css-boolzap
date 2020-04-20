@@ -5,21 +5,24 @@ $(document).ready(function () {
   var newInput = $(".add_element");
   var icon = $(".chat_send i");
   var text = newInput.val().trim();
+  var search = $(".search_bar input");
 
 
   //ricerca dei contatti
 
-  $(".search_bar input").keyup(function(){
+  search.keyup(function(){
 
     $("#user .user_name").hide();
-    var cerca = $(this).val().toLowerCase();
-    
-    $("#user .user_name h5").filter(function(){
 
-      if($(this,"#user .user_name h5").text().toLowerCase().includes(cerca)){
-        $(this).parents().show()
+    var nomeCercato = search.val().trim().toLowerCase();
+
+    $("#user .user_name").each(function(){
+      var nomeContatto = $(this).find('h5').text();
+      if(nomeContatto.toLowerCase().includes(nomeCercato)){
+        $(this).show();
       }
     })
+      
   })
 
 
