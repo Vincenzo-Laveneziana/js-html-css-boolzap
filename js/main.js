@@ -5,11 +5,23 @@ $(document).ready(function () {
   var newInput = $(".add_element");
   var icon = $(".chat_send i");
   var text = newInput.val().trim();
-  var arrow = $("fas fa-chevron-down");
+  var user = $(".user_name")
 
 
+  //ricerca dei contatti
 
+  $(".search_bar input").keyup(function(){
 
+    $("#user .user_name").hide();
+    var cerca = $(this).val().toLowerCase();
+    
+    $("#user .user_name h5").filter(function(){
+
+      if($(this,"#user .user_name h5").text().toLowerCase().includes(cerca)){
+        $(this).parents().show()
+      }
+    })
+  })
 
 
   //al click
@@ -43,9 +55,10 @@ $(document).ready(function () {
       if(text !== ""){ 
         //console.log("log3");
         writeMsg(text);
+        //risposta dal contatto
+        setTimeout(rispostaContatto, 1000);
       }
-      //risposta all'utente
-      setTimeout(rispostaContatto, 1000);
+      
     }
     
     
@@ -76,7 +89,7 @@ $(document).ready(function () {
 
   function rispostaContatto(){
     var elementNew = $(".template .message ").clone();
-    elementNew.children(".message-text").text("ok");
+    elementNew.children(".message-text").text("Si Si hai ragione!!!");
     elementNew.children(".data_time").text(addData());
     elementNew.addClass("received");
     elementNew.appendTo(list);
