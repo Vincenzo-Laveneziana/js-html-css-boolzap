@@ -1,11 +1,15 @@
 $(document).ready(function () {
   
 
-  var list =$("#msg");
+  var list =$(".right-messages");
   var newInput = $(".add_element");
   var icon = $(".chat_send i");
   var text = newInput.val().trim();
   var arrow = $("fas fa-chevron-down");
+
+
+
+
 
 
   //al click
@@ -37,12 +41,20 @@ $(document).ready(function () {
     
     if(event.which == 13){
       if(text !== ""){ 
-        console.log("log3");
+        //console.log("log3");
         writeMsg(text);
       }
+      //risposta all'utente
+      setTimeout(rispostaContatto, 1000);
     }
+    
+    
   });//fine key up
   
+
+  /* 
+    FUNZIONI
+  */
 
   function writeMsg(word){
     sendMsg(word);
@@ -52,13 +64,23 @@ $(document).ready(function () {
   }
   
   function sendMsg(word){ 
-    var elementNew = $(".template .posted ").clone();
-    elementNew.children("p").html(word  + "<span>"+ addData() +"</span>");
+    var elementNew = $(".template .message ").clone();
+    elementNew.children(".message-text").text(word);
+    elementNew.children(".data_time").text(addData());
+    elementNew.addClass("sent");
     elementNew.appendTo(list);
+    $("#body_chat").scrollTop($("#body_chat").prop("scrollHeight"));
 
-    $(".posted span").addClass("data_time");
-    $("#body_chat").scrollTop($("#body_chat").prop("scrollHeight")); 
     //console.log(elementNew.text());
+  }
+
+  function rispostaContatto(){
+    var elementNew = $(".template .message ").clone();
+    elementNew.children(".message-text").text("ok");
+    elementNew.children(".data_time").text(addData());
+    elementNew.addClass("received");
+    elementNew.appendTo(list);
+    $("#body_chat").scrollTop($("#body_chat").prop("scrollHeight"));
   }
 
   function toggleMic(){

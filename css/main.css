@@ -83,13 +83,13 @@ body{
   display: none;
 }
 
-.chat_send .send{
-  display: none;
-}
-
 .rec,
 .send{
   cursor: pointer;
+}
+
+.chat_send .send{
+  display: none;
 }
 
 /* Sidebar */
@@ -315,35 +315,46 @@ body{
   flex-grow: 1;
   overflow-y: auto;
   background-image: url("../img/mine.jpg");
-  padding-top: 30px;
+  padding: 30px;
 }
 
-#body_chat li{
-  min-height: 70px;
-  padding: 5px 20px;
-  display: flex;
-  align-items: center;
-}
-
-#body_chat li p{
+#body_chat .message {
+  position: relative; 
+  min-width: 50px;
+  max-width: 55%;
+  margin: 8px 0;
+  padding: 20px;
+  font-size: 15px;
+  border-radius: 10px ;
+  clear: both;
   overflow-wrap: break-word;
-  position: relative;
-  max-width: 300px;
-  padding: 15px 40px 15px 20px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
 }
 
-#body_chat li .data_time{
+#body_chat .message.sent{
+  float: right;
+  background: #D5F9BA;
+}
+
+#body_chat .message.received{
+  float: left;
+  background: #fff;
+}
+
+#body_chat .message .data_time{
   position: absolute;
-  color: #B7B9BB;
-  font-size: 9px;
   bottom: 5px;
   right: 5px;
-  font-weight: 300;
-  
+  font-size: 10px;
+  color: #B6B9BB;
+}
+
+/* conversazioni */
+ #body_chat .right-messages{
+  display: none;
+} 
+
+#body_chat .right-messages.active {
+  display: block;
 }
 
 
