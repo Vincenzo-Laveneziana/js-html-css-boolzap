@@ -12,6 +12,7 @@ body{
   font-family: 'Lato', sans-serif;
   height: 100vh;
   background-image: linear-gradient(
+    to bottom,
      #029688 0px,
      #029688 15vh,
      #DBDBD4 15vh,
@@ -72,7 +73,7 @@ body{
 }
 
 .container{
-  width: 80%;
+  width: 1300px;
   min-width: 800px;
   height: 95%;
   background: white;

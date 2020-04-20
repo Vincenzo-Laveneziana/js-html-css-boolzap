@@ -78,4 +78,6 @@ $(document).ready(function () {
                      (dateNow.getMinutes()<10? '0':'') 
                       + dateNow.getMinutes();
   }
-});
+
+  
+});//fine ready
