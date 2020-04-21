@@ -256,6 +256,14 @@ body{
   flex-direction: column;
 }
 
+#chat .ieri_oggi{
+  display: inline;
+}
+
+#chat .data_time{
+  display: inline;
+}
+
 /* Chat--> guest_chat */
 #guest_chat{
   width: 100%;
@@ -324,7 +332,7 @@ body{
   min-width: 50px;
   max-width: 55%;
   margin: 8px 0;
-  padding: 20px;
+  padding: 25px 20px;
   font-size: 14px;
   border-radius: 10px ;
   overflow-wrap: break-word;
@@ -346,6 +354,57 @@ body{
   color: #B6B9BB;
 }
 
+#body_chat i{
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 15px;
+  color: transparent;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+#body_chat .message:hover i{
+  color: rgb(134, 134, 134);
+}
+
+#body_chat .sotto_menu{
+  position: absolute;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  box-shadow: 0px 0px 3px 0px rgba(110,110,110,1);
+  z-index: 1;
+}
+
+
+#body_chat .sotto_menu_active{
+ display: none;
+}
+
+
+
+#body_chat .received .sotto_menu{
+  top: 75%;
+  left: 90%;
+}
+
+#body_chat .sent .sotto_menu{
+  top: 75%;
+  left: 50%;
+}
+
+#body_chat .message .sotto_menu span{
+  padding: 10px;
+  cursor: pointer;
+  color: grey;
+}
+
+#body_chat .message .sotto_menu span:hover{
+  
+  color: black;
+}
 /* conversazioni */
 #body_chat .right-messages{
   display: none;

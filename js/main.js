@@ -6,6 +6,7 @@ $(document).ready(function () {
   var icon = $(".chat_send i");
   var text = newInput.val().trim();
   var search = $(".search_bar input");
+  var arrow = $("#body_chat .fa-chevron-down");
 
 
   //ricerca dei contatti
@@ -32,6 +33,7 @@ $(document).ready(function () {
     var contattoImg = $(this).find("img").attr("src");
     var contattoNome = $(this).find("h5").text();
     var oraAccesso = $(this).children("span").text();
+    var vecchioAccesso = $(".last_access_info")
 
     $(".user_name").removeClass("active");
  
@@ -43,9 +45,9 @@ $(document).ready(function () {
     $(this,".user_name").addClass("active");
 
 
-    $("#guest_chat .last_access img").attr("src", contattoImg)
-    $("#guest_chat .last_access h5 ").text(contattoNome)
-    $("#guest_chat .last_access .data_time ").text(oraAccesso)
+    $("#guest_chat .last_access img").attr("src", contattoImg);
+    $("#guest_chat .last_access h5 ").text(contattoNome);
+    $("#guest_chat .last_access .data_time ").text(oraAccesso);
   })
 
 
@@ -85,6 +87,14 @@ $(document).ready(function () {
       }
     }
   });//fine key up
+
+
+
+  //menu nascoscoto
+
+  arrow.click(function(){
+    $(this).next().toggleClass("sotto_menu_active")
+  })
   
 
   /* 
@@ -133,7 +143,7 @@ $(document).ready(function () {
     elementNew.addClass("received");
     elementNew.appendTo(list);
     scrollMessaggio();
-
+  
     $(".user_name.active").find(".data_time").text(addData())
     $(".last_access_info").find(".data_time").text(addData())
   }
