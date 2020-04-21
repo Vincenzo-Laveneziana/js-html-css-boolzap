@@ -9,7 +9,6 @@ $(document).ready(function () {
 
 
   //ricerca dei contatti
-
   search.keyup(function(){
 
     $("#user .user_name").hide();
@@ -26,7 +25,7 @@ $(document).ready(function () {
   })
 
 
-  //al click
+  //quando scrivo un mess al clicc dell'incona plane lo invio
   icon.click(function(){
     text = newInput.val().trim();
     if(text !== ""){ 
@@ -78,17 +77,19 @@ $(document).ready(function () {
     newInput.val("");
   }
   
+  //Funzione per inviare un messaggio
   function sendMsg(word){ 
     var elementNew = $(".template li").clone();
     elementNew.find(".message-text").text(word);
     elementNew.find(".data_time").text(addData());
     elementNew.addClass("sent");
     elementNew.appendTo(list);
-    $("#body_chat").scrollTop($("#body_chat").prop("scrollHeight"));
-
     //console.log(elementNew.text());
-  }
+    scrollMessaggio();
+  } 
 
+
+  //Ricevere un messaggio dal contatto
   function rispostaContatto(){
     var risposte = ["Si si hai ragione!!!", 
                     "Stiamo lavorando attivamente per lei",
@@ -107,9 +108,19 @@ $(document).ready(function () {
     elementNew.find(".data_time").text(addData());
     elementNew.addClass("received");
     elementNew.appendTo(list);
-    $("#body_chat").scrollTop($("#body_chat").prop("scrollHeight"));
+    scrollMessaggio();
   }
 
+  //funzione per far scollare la pagina
+  function scrollMessaggio (){
+    var pixelScroll = $(".right-messages.active").height();
+
+    $("#body_chat").animate({
+      scrollTop: pixelScroll
+    },500)
+  }
+
+  //Funzioni di show e hide icon mic-plane
   function toggleMic(){
     icon.removeClass("fa-microphone").addClass("fa-paper-plane");
   }
@@ -118,6 +129,8 @@ $(document).ready(function () {
     icon.removeClass("fa-paper-plane").addClass("fa-microphone");
   }
 
+
+  //funzione che aggiunge gli zeri alle date esempio 12:6 --> 12:06
   function addData(){
     var dateNow = new Date();
     return hourNow = (dateNow.getHours()<10?'0':'') 
