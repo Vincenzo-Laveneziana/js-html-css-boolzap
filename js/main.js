@@ -51,12 +51,20 @@ $(document).ready(function () {
   })
 
 
-  //alla presione del tasto emoticon
+  //alla presione del tasto emoji
   emoticon.click(function(){
-    
     $("#functions").toggle()
-    
   });
+
+
+  //quando si clicca su un emoji la mette nel campo scrivi messaggio
+  $('.emoji span').click(function(){
+    var emoticon = $(this).html();
+    var text = $(newInput).val();
+    text += emoticon;
+    toggleMic();
+    newInput.val(text);
+  })
 
   //quando scrivo un mess al clicc dell'incona plane lo invio
   icon.click(function(){
