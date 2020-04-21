@@ -71,6 +71,7 @@ $(document).ready(function () {
     text = newInput.val().trim();
     if(text !== ""){ 
       writeMsg(text);
+      setTimeout(rispostaContatto, 1000);
     }
   })
 
