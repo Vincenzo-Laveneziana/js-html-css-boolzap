@@ -97,15 +97,16 @@ $(document).ready(function () {
   /* 
     FUNZIONI
   */
-
+  //funziona per eliminare messaggi e far apparire il menu nascosto
   function deletMess(){
-
     //al click apri il menu nascosto
     $(".fa-chevron-down").click(function(){
       $(this).next().toggleClass("hide_menu")
       scrollMessaggio ()
     })
 
+
+    
     $(".sotto_menu").mouseleave(function(){
       $(".sotto_menu").removeClass("hide_menu")
     })
@@ -121,7 +122,6 @@ $(document).ready(function () {
   function writeMsg(word){ 
     deletMess()
     list = $(".right-messages.active");
-
     var elementNew = $(".template li").clone();
     elementNew.find(".message-text").text(word);
     elementNew.find(".data_time").text(addData());
