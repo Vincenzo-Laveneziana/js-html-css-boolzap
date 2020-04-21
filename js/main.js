@@ -92,16 +92,17 @@ $(document).ready(function () {
 
   //menu nascoscoto
 
+  //al click appare il menu
   arrow.click(function(){
     $(this).next().toggle()
   })
   
-
+  //quando esco dall'aerea il menu si chiude
   $(".sotto_menu").mouseleave(function(){
     $(".sotto_menu").hide();
   })
 
-
+  //cancella un elemento
   $(".sotto_menu .delete").click(function(){
     $(this).parents("li").remove()
   })
@@ -155,6 +156,7 @@ $(document).ready(function () {
   
     $(".user_name.active").find(".data_time").text(addData())
     $(".last_access_info").find(".data_time").text(addData())
+    $(".user_name.active .user_name_text").find("span").text(risposte[random])
   }
 
   //funzione per far scollare la pagina
