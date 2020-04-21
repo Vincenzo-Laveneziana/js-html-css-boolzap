@@ -79,9 +79,9 @@ $(document).ready(function () {
   }
   
   function sendMsg(word){ 
-    var elementNew = $(".template .message ").clone();
-    elementNew.children(".message-text").text(word);
-    elementNew.children(".data_time").text(addData());
+    var elementNew = $(".template li").clone();
+    elementNew.find(".message-text").text(word);
+    elementNew.find(".data_time").text(addData());
     elementNew.addClass("sent");
     elementNew.appendTo(list);
     $("#body_chat").scrollTop($("#body_chat").prop("scrollHeight"));
@@ -102,9 +102,9 @@ $(document).ready(function () {
     var random = Math.floor(Math.random()* risposte.length);
     //console.log(random);
     
-    var elementNew = $(".template .message ").clone();
-    elementNew.children(".message-text").text(risposte[random]);
-    elementNew.children(".data_time").text(addData());
+    var elementNew = $(".template li").clone();
+    elementNew.find(".message-text").text(risposte[random]);
+    elementNew.find(".data_time").text(addData());
     elementNew.addClass("received");
     elementNew.appendTo(list);
     $("#body_chat").scrollTop($("#body_chat").prop("scrollHeight"));

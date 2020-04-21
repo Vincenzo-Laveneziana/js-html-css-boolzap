@@ -71,9 +71,6 @@ body{
   display: none;
 }
 
-
-
-
 /* Sidebar */
 #sidebar{
   width: 35%;
@@ -151,7 +148,7 @@ body{
   background: #FAFAFA;
   height: 40px;
   flex-shrink: 1;
-  padding: 0 5px;
+  padding: 5px;
 }
 
 #search .search_bar{
@@ -309,25 +306,35 @@ body{
   padding: 30px;
 }
 
-#body_chat .message {
+#body_chat li{
+  width: 100%;
+  display: flex;
+}
+
+#body_chat .sent{
+  justify-content: flex-end;
+}
+
+#body_chat .received{
+  justify-content: flex-start;
+}
+
+#body_chat .message{
   position: relative; 
   min-width: 50px;
   max-width: 55%;
   margin: 8px 0;
-  padding: 22px;
+  padding: 20px;
   font-size: 14px;
   border-radius: 10px ;
-  clear: both;
   overflow-wrap: break-word;
 }
 
-#body_chat .message.sent{
-  float: right;
+#body_chat .sent .message{
   background: #D5F9BA;
 }
 
-#body_chat .message.received{
-  float: left;
+#body_chat .received .message{
   background: #fff;
 }
 
@@ -340,15 +347,13 @@ body{
 }
 
 /* conversazioni */
- #body_chat .right-messages{
+#body_chat .right-messages{
   display: none;
 } 
 
 #body_chat .right-messages.active {
   display: block;
-  
-}
-
+} 
 
 /* Chat--> sending_chat */
 #sending_chat{
