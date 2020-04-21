@@ -48,6 +48,7 @@ $(document).ready(function () {
     $("#guest_chat .last_access img").attr("src", contattoImg);
     $("#guest_chat .last_access h5 ").text(contattoNome);
     $("#guest_chat .last_access .data_time ").text(oraAccesso);
+    $("#functions").hide()
   })
 
 
