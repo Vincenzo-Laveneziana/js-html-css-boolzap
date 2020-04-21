@@ -93,10 +93,19 @@ $(document).ready(function () {
   //menu nascoscoto
 
   arrow.click(function(){
-    $(this).next().toggleClass("sotto_menu_active")
+    $(this).next().toggle()
   })
   
 
+  $(".sotto_menu").mouseleave(function(){
+    $(".sotto_menu").hide();
+  })
+
+
+  $(".sotto_menu .delete").click(function(){
+    $(this).parents("li").remove()
+  })
+  
   /* 
     FUNZIONI
   */

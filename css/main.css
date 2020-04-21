@@ -371,18 +371,11 @@ body{
 #body_chat .sotto_menu{
   position: absolute;
   width: 160px;
-  display: flex;
-  flex-direction: column;
   background: white;
   box-shadow: 0px 0px 3px 0px rgba(110,110,110,1);
   z-index: 1;
+  display: none;
 }
-
-
-#body_chat .sotto_menu_active{
- display: none;
-}
-
 
 
 #body_chat .received .sotto_menu{
@@ -392,19 +385,21 @@ body{
 
 #body_chat .sent .sotto_menu{
   top: 75%;
-  left: 50%;
+  right: 0;
 }
 
 #body_chat .message .sotto_menu span{
   padding: 10px;
   cursor: pointer;
   color: grey;
+  display: inline-block;
+  user-select: none;
 }
 
 #body_chat .message .sotto_menu span:hover{
-  
   color: black;
 }
+
 /* conversazioni */
 #body_chat .right-messages{
   display: none;
