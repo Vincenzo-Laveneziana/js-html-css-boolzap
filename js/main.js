@@ -6,7 +6,7 @@ $(document).ready(function () {
   var icon = $(".chat_send i");
   var text = newInput.val().trim();
   var search = $(".search_bar input");
-  var arrow = $("#body_chat .fa-chevron-down");
+  
 
 
   //ricerca dei contatti
@@ -84,42 +84,42 @@ $(document).ready(function () {
         writeMsg(text);
         //risposta dal contatto
         setTimeout(rispostaContatto, 1000);
+        
       }
     }
   });//fine key up
 
+  //richiamo la funzione per eliminare i messaggi
+  deletMess()
 
-
-  //menu nascoscoto
-
-  //al click appare il menu
-  arrow.click(function(){
-    $(this).next().toggle()
-  })
   
-  //quando esco dall'aerea il menu si chiude
-  $(".sotto_menu").mouseleave(function(){
-    $(".sotto_menu").hide();
-  })
 
-  //cancella un elemento
-  $(".sotto_menu .delete").click(function(){
-    $(this).parents("li").remove()
-  })
-  
   /* 
     FUNZIONI
   */
 
-  function writeMsg(word){
-    sendMsg(word);
-    //console.log(word);
-    toggleMicReverse();
-    newInput.val("");
+  function deletMess(){
+
+    //al click apri il menu nascosto
+    $(".fa-chevron-down").click(function(){
+      $(this).next().toggleClass("hide_menu")
+      scrollMessaggio ()
+    })
+
+    $(".sotto_menu").mouseleave(function(){
+      $(".sotto_menu").removeClass("hide_menu")
+    })
+
+    //cancella un elemento
+    $(".sotto_menu .delete").click(function(){
+      $(this).parents("li").remove()
+    })
   }
+
   
   //Funzione per inviare un messaggio
-  function sendMsg(word){ 
+  function writeMsg(word){ 
+    deletMess()
     list = $(".right-messages.active");
 
     var elementNew = $(".template li").clone();
@@ -127,8 +127,11 @@ $(document).ready(function () {
     elementNew.find(".data_time").text(addData());
     elementNew.addClass("sent");
     elementNew.appendTo(list);
+    newInput.val("");
+    toggleMicReverse();
     //console.log(elementNew.text());
     scrollMessaggio();
+    
   } 
 
 
@@ -153,7 +156,8 @@ $(document).ready(function () {
     elementNew.addClass("received");
     elementNew.appendTo(list);
     scrollMessaggio();
-  
+    deletMess()
+    
     $(".user_name.active").find(".data_time").text(addData())
     $(".last_access_info").find(".data_time").text(addData())
     $(".user_name.active .user_name_text").find("span").text(risposte[random])
