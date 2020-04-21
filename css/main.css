@@ -346,6 +346,7 @@ body{
 
 #body_chat .right-messages.active {
   display: block;
+  
 }
 
 
@@ -353,7 +354,8 @@ body{
 #sending_chat{
   width: 100%;
   background: #F3EEEB;
-  height: 60px;
+  height: 55px;
+  padding: 10px 0;
   flex-shrink: 1;
   align-items: center;
   display: flex;

@@ -111,9 +111,7 @@ $(document).ready(function () {
   }
 
   function toggleMic(){
-   
     icon.removeClass("fa-microphone").addClass("fa-paper-plane");
-
   }
 
   function toggleMicReverse(){
