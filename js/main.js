@@ -28,17 +28,24 @@ $(document).ready(function () {
 
   $(".user_name").click(function(){
 
-    
+    var conversazione = $(this).attr("data-conversazione");
+    var contattoImg = $(this).find("img").attr("src");
+    var contattoNome = $(this).find("h5").text();
+    var oraAccesso = $(this).children("span").text();
+
     $(".user_name").removeClass("active");
  
-    var conversazione = $(this).attr("data-conversazione");
-
+  
     $(".right-messages").removeClass("active")
 
     $(".right-messages[data-conversazione = '" + conversazione +"']").addClass("active");
 
-    console.log(conversazione);
     $(this,".user_name").addClass("active");
+
+
+    $("#guest_chat .last_access img").attr("src", contattoImg)
+    $("#guest_chat .last_access h5 ").text(contattoNome)
+    $("#guest_chat .last_access .data_time ").text(oraAccesso)
   })
 
 
@@ -93,6 +100,8 @@ $(document).ready(function () {
   
   //Funzione per inviare un messaggio
   function sendMsg(word){ 
+    list = $(".right-messages.active");
+
     var elementNew = $(".template li").clone();
     elementNew.find(".message-text").text(word);
     elementNew.find(".data_time").text(addData());
@@ -105,6 +114,7 @@ $(document).ready(function () {
 
   //Ricevere un messaggio dal contatto
   function rispostaContatto(){
+    list = $(".right-messages.active");
     var risposte = ["Si si hai ragione!!!", 
                     "Stiamo lavorando attivamente per lei",
                     "No problem!!",
@@ -123,6 +133,9 @@ $(document).ready(function () {
     elementNew.addClass("received");
     elementNew.appendTo(list);
     scrollMessaggio();
+
+    $(".user_name.active").find(".data_time").text(addData())
+    $(".last_access_info").find(".data_time").text(addData())
   }
 
   //funzione per far scollare la pagina
