@@ -1,7 +1,7 @@
 $(document).ready(function () {
   
 
-  var list =$(".right-messages");
+  var list =$(".right-messages.active");
   var newInput = $(".add_element");
   var icon = $(".chat_send i");
   var text = newInput.val().trim();
@@ -22,6 +22,23 @@ $(document).ready(function () {
       }
     })
       
+  })
+
+  //cambio conversazione
+
+  $(".user_name").click(function(){
+
+    
+    $(".user_name").removeClass("active");
+ 
+    var conversazione = $(this).attr("data-conversazione");
+
+    $(".right-messages").removeClass("active")
+
+    $(".right-messages[data-conversazione = '" + conversazione +"']").addClass("active");
+
+    console.log(conversazione);
+    $(this,".user_name").addClass("active");
   })
 
 
@@ -59,10 +76,7 @@ $(document).ready(function () {
         //risposta dal contatto
         setTimeout(rispostaContatto, 1000);
       }
-      
     }
-    
-    
   });//fine key up
   
 
