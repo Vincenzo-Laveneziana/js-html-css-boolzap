@@ -6,7 +6,7 @@ $(document).ready(function () {
   var icon = $(".chat_send i");
   var text = newInput.val().trim();
   var search = $(".search_bar input");
-  
+  var emoticon = $(".chat_emoticon i");
 
 
   //ricerca dei contatti
@@ -50,6 +50,13 @@ $(document).ready(function () {
     $("#guest_chat .last_access .data_time ").text(oraAccesso);
   })
 
+
+  //alla presione del tasto emoticon
+  emoticon.click(function(){
+    
+    $("#functions").toggle()
+    
+  });
 
   //quando scrivo un mess al clicc dell'incona plane lo invio
   icon.click(function(){

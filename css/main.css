@@ -414,6 +414,30 @@ body{
   display: block;
 } 
 
+
+/* Chat--> emoticon-list */
+#functions{
+  display: none;
+}
+
+.emoticon-list{
+  width: 100%;
+  min-height: 50px;
+  bottom: 60px;
+  left: 30px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  padding: 8px;
+  border-radius: 3px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #EAEAEA;
+}
+
+.emoticon-list span{
+  margin: 10px;
+  cursor: pointer;
+}
+
 /* Chat--> sending_chat */
 #sending_chat{
   width: 100%;
@@ -434,6 +458,8 @@ body{
   width: 10%;
   text-align: center;
 }
+
+
 
 #sending_chat .chat_field{
   width: 80%;
